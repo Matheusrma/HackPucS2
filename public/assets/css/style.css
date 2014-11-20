@@ -73,7 +73,8 @@ body {
 
 #spread h2 {
   color: #0068a0;
-  padding-top: 20px;
+  padding-top: 25px;
+  margin-bottom: 20px;
   font-size: 32px;
 }
 
@@ -99,6 +100,31 @@ body {
 #donate img {
   display: block;
   margin-left: 30px;
+}
+
+#social-networks {
+  padding: 20px 20px;
+  width: 268px;
+  margin: auto;
+}
+
+#facebook-share, 
+#twitter-share{
+  margin-right: 15px;
+  float: left;
+}
+
+#mail-share {
+  width: 69px;
+  height: 69px;
+  background-image: url("../img/icon-mail.gif");
+  border: 0;
+  text-indent: -9999px;
+  margin-right: 15px;
+}
+
+#mail-share:active {
+  background: none;
 }
 
 #email-input{
