@@ -8,7 +8,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
 
     self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
 
-    self.shareName = '';
     self.toShareEmail = '';
 
     self.isEmailInvalid = false;
@@ -20,8 +19,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     startTimeline($('#happy-finger'));
   }
 
-  var senderName = getParameterByName('name');
-
   var infoPhrases = [
     'O câncer de próstata tem até 90% de chances de cura se diagnosticado precocemente.',
     '10% dos homens com mais de 50 anos têm câncer de próstata.',
@@ -31,10 +28,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   ];
 
   //PUBLIC INTERFACE
-
-  this.getSenderName = function(){
-    return senderName || 'Um Amigo';
-  }
 
   this.share = function(){
     self.isShared = true;
