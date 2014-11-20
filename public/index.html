@@ -83,18 +83,11 @@
 
     <!--<p id="little-joke">{{main.getSenderName()}} te enviou um amorzinho...</p>-->
 
-    <div ng-hide="main.isShared">
-      <label for="shareName">Nome:</label>
-      <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
-
-      <button onClick="ga('send', 'event', 'Share', 'Activate');" ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
-    </div>
-
     <a class="twitter-share-button" href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul" >
       Tweet
     </a>
 
-    <div class="col-sm-8" ng-show="main.isShared">
+    <div class="col-sm-8">
       <p>Compartilhe o amor:</p>  
       <p>{{main.shareLink}}</p>
 
