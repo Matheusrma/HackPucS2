@@ -8,3 +8,9 @@ p {
   font-size: 30px;
   color: white;
 }
+
+@media screen {
+    #whatsappshare {
+        display: none;
+    }
+}
