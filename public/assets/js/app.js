@@ -18,7 +18,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
         $('#social-networks').css('width', '340px');
     }
 
-    startTimeline($('#happy-finger'));
+    startTimeline($('#happy-finger'), $('#content'));
   }
 
   var infoPhrases = [
@@ -100,16 +100,21 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     return 'unknown';
   }
 
-  function startTimeline(element) {
+  function startTimeline(hand, content) {
     
     var screenHeight = window.innerHeight;
 
-    element.css('top', screenHeight);
+    $.playSound('assets/sound/love');
 
-    TweenLite.to(element, 1.5, {top:screenHeight * 0.88, onComplete:function(){
-      TweenLite.to(element, 0.3, {top:screenHeight * 0.9, onComplete:function(){
-        TweenLite.to(element, 1.2, {top:screenHeight * 0.25, onComplete:function(){
-          console.log('END');
+    hand.css('top', screenHeight);
+    content.css('opacity', 0);
+
+    TweenLite.to(hand, 1.5, {top:screenHeight * 0.88, onComplete:function(){
+      TweenLite.to(hand, 0.3, {top:screenHeight * 0.9, onComplete:function(){
+        TweenLite.to(hand, 1.2, {top:screenHeight * 0.25, onComplete:function(){
+          TweenLite.to(content, 1, {opacity:1, onComplete:function(){
+
+          }});    
         }});
       }});
     }});

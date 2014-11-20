@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Espalhe amor azul! s2</title>
+    <title>Espalhe Amor Azul - #espalheAmorAzul</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -23,6 +23,8 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.playsound.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/lib/bootstrap.min.js"></script>
 
@@ -49,7 +51,7 @@
       <div class="row">
         <img id="happy-finger" src="assets/img/happy-finger.png">
 
-        <div class="col-md-9 col-md-offset-3"> 
+        <div id="content" class="col-md-9 col-md-offset-3">
           <p id="little-joke" class="badscript-font text-center">"Sentiu meu toque de amor?"</p>
           <p id="serious-stats" class="text-center">{{main.infoText}}</p>
 
@@ -135,7 +137,7 @@
           <div class="modal-footer">
             <button id="email-button" type="button" class="btn btn-primary" 
                   onClick="ga('send', 'event', 'Share', 'Email');" 
-                  ng-click="main.sendMail()">Send Email</button>
+                  ng-click="main.sendMail()">Enviar Amor</button>
             <div id="powered-by">      
               Powered by <span><a target="_blank" href="https://sendgrid.com/"><img src="assets/img/sendgrid_logo.png"></a></span>
             </div>
