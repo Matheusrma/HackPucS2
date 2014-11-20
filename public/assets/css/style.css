@@ -17,6 +17,7 @@ body {
   background: radial-gradient(ellipse at center,  #2ebcfd 0%,#0498dd 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebcfd', endColorstr='#0498dd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+  overflow: hidden;
 }
 
 #topBar {
@@ -47,7 +48,7 @@ body {
 #happy-finger {
   position: absolute;
   top: 800;
-  left: 0;
+  left: 20;
 }
 
 #little-joke {

@@ -104,7 +104,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     
     var screenHeight = window.innerHeight;
 
-    $.playSound('assets/sound/love');
+    $.playSound('assets/sound/love2');
 
     hand.css('top', screenHeight);
     content.css('opacity', 0);
