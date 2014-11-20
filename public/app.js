@@ -39,10 +39,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     return this.shareName == false;
   }
 
-  this.getWhatsappLink = function(){
-    return ;
-  }
-
   this.sendMail = function(){
     if (!validateEmail(self.toShareEmail)){
       self.isEmailInvalid = true;

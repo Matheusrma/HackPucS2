@@ -26,12 +26,13 @@ app.post('/api/sendMail', function(req, res){
   var sg_password = "hackpucs27";
 
   var sendgrid = require("sendgrid")(sg_username, sg_password);
+  var link = "https://hackpucs2.herokuapp.com?name=" + emailInfo.name;
 
   sendgrid.send({
     to:       emailInfo.to,
     from:     'espalheamorazul@gmail.com',
     subject:  emailInfo.name + ' te mandou amor!',
-    text:     'Começou a espalhaçao de amorzinho s2 s2.'
+    html:     '<div>Alguém lhe mandou uma mensagem de amor e carinho.<a href=' + link + '> Abrir </a> </div>'
   }, function(err, json) {
     if (err) { return console.error(err); }
     console.log(json);
