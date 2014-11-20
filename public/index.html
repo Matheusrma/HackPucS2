@@ -53,8 +53,27 @@
             <div class="col-md-6">
               <div id="spread" class="info-bg">
                 <h2 class="badscript-font text-center">#espalheamorazul</h2>
+
+                <a class="twitter-share-button" 
+                    href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul" 
+                    data-count="vertical">
+                  Tweet
+                </a>
+
+                <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"> </div>
+
+                <input class="form-control" ng-model="main.toShareEmail" type="text">
+                <a id="whats-app-share" 
+                  href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
+                  data-action="share/whatsapp/share" 
+                  style="display:none" >
+                  Share via Whatsapp
+                </a>
+
+                <span ng-show='main.isEmailInvalid'>Email Invalido</span>
+                <button onClick="ga('send', 'event', 'Share', 'Email');" ng-click="main.sendMail()">Email</button>
               </div>
-            </div>
+            </div><!-- /#spread -->
 
             <div class="col-md-6">
               <div id="info" class="info-bg">
@@ -82,28 +101,6 @@
     </div>
 
     <!--<p id="little-joke">{{main.getSenderName()}} te enviou um amorzinho...</p>-->
-
-    <a class="twitter-share-button" href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul" >
-      Tweet
-    </a>
-
-    <div class="col-sm-8">
-      <p>Compartilhe o amor:</p>  
-      <p>{{main.shareLink}}</p>
-
-      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count">
-      </div>
-
-      <input class="form-control" ng-model="main.toShareEmail" type="text">
-      <a id="whats-app-share" 
-         href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
-         data-action="share/whatsapp/share" 
-         style="display:none" >
-        Share via Whatsapp
-      </a>
-      <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-      <button onClick="ga('send', 'event', 'Share', 'Email');" ng-click="main.sendMail()">Email</button>
-    </div>
 
     <!-- Facebook JS -->
     <script>
