@@ -19,6 +19,8 @@ angular.module('hackpuc').controller('MainCtrl', function () {
   this.share = function(){
     self.isShared = true;
     this.shareLink = encodeURI(location.origin + '/?name=' + this.shareName);
+
+    $('.fb-share-button').attr('data-href', this.shareLink);
   }
 
   this.isNameFalsy = function(){
