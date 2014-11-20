@@ -14,6 +14,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
 
     if (getMobileOperatingSystem() != 'unknown') {
         $('#whats-app-share').show();
+        $('#social-networks').css('width', '340px');
     }
 
     startTimeline($('#happy-finger'));
