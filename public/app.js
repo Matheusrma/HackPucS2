@@ -33,8 +33,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     }
   }
 
-  self.test = getMobileOperatingSystem();
-
   if (getMobileOperatingSystem() != 'unknown') {
       $('#whats-app-share').show();
   }
