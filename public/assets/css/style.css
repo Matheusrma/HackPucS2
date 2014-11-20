@@ -17,7 +17,6 @@ body {
   background: radial-gradient(ellipse at center,  #2ebcfd 0%,#0498dd 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebcfd', endColorstr='#0498dd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-  overflow: hidden;
 }
 
 #topBar {
@@ -63,12 +62,8 @@ body {
 }
 
 .info-bg {
-  width: 400px;
-  height: 235px;
-  background-image: url("../img/info-bg.gif");
-  background-repeat: no-repeat;
   background-color: #fff;
-  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 #spread h2 {
@@ -138,4 +133,17 @@ body {
 #powered-by{
   float:left; 
   margin-top:25px
+}
+
+/* MOBILE */
+
+@media (min-width: 992px) { 
+  .info-bg {
+    width: 400px;
+    height: 235px;
+    background-image: url("../img/info-bg.gif");
+    background-repeat: no-repeat;
+    background-color: #fff;
+    margin-top: 30px;
+  }
 }
