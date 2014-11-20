@@ -11,10 +11,14 @@ angular.module('hackpuc').controller('MainCtrl', function () {
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-  this.senderName = getParameterByName('name');
+  var senderName = getParameterByName('name');
 
   this.shareName = '';
   this.isShared = false;
+
+  this.getSenderName = function(){
+    return senderName || 'Um Amigo';
+  }
 
   this.share = function(){
     self.isShared = true;

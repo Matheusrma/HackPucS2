@@ -38,7 +38,7 @@
     </script>
 
 
-    <p>{{main.senderName}} te enviou um amorzinho...</p>
+    <p>{{main.getSenderName()}} te enviou um amorzinho...</p>
 
     <div ng-hide="main.isShared" class="col-sm-8">
       <label for="shareName">Nome:</label>
@@ -50,7 +50,7 @@
     <div class="col-sm-8" ng-show="main.isShared">  
       <p>{{main.shareLink}}</p>
 
-      <div class="fb-share-button" data-href="/" data-layout="box_count"></div>
+      <div class="fb-share-button" data-href="https://hackpucs2.herokuapp.com" data-layout="box_count"></div>
     </div>
 
   </body>
