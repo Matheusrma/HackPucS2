@@ -52,7 +52,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     $http.post('/api/sendMail',
       {
         to : self.toShareEmail,
-        name: 'Um Amigo'
+        name: 'Um amigo'
       }).
       success(function(data, status, headers, config) {
         console.log('UHUL');
@@ -60,6 +60,8 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
       error(function(data, status, headers, config) {
         console.log('SHIT');
       });
+
+    $('#email-modal').modal('toggle');
   }
 
   //PRIVATE FUNCTIONS
