@@ -43,18 +43,23 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   }
 
   this.sendMail = function(){
-    console.log(self.emailList);
-
-    if (!validateEmail(self.toShareEmail)){
-      self.isEmailInvalid = true;
-      return;
+    for(var i = 0; i < self.emailList.length; ++i) {
+      var email = self.emailList[i];
+      if (!validateEmail(email.text)){
+        self.isEmailInvalid = true;
+        return;
+      }  
     }
 
     self.isEmailInvalid = false;
 
+    var mappedEmailList = self.emailList.map(function(email){
+      return email.text;
+    }); 
+
     $http.post('/api/sendMail',
       {
-        to : self.toShareEmail,
+        to : mappedEmailList,
         name: 'Um amigo'
       }).
       success(function(data, status, headers, config) {
