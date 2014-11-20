@@ -11,7 +11,7 @@ angular.module('hackpuc').controller('MainCtrl', function () {
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-  ZeroClipboard.config( { swfPath: "lib/ZeroClipboard.swf" } );
+  ZeroClipboard.config( { swfPath: "./lib/ZeroClipboard.swf" } );
   
   var client = new ZeroClipboard('my-button_text');
 
