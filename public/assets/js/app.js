@@ -11,7 +11,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     self.shareName = '';
     self.toShareEmail = '';
 
-    self.isShared = false;
     self.isEmailInvalid = false;
 
     if (getMobileOperatingSystem() != 'unknown') {
