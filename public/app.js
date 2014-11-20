@@ -39,6 +39,18 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
 
   var senderName = getParameterByName('name');
 
+  var infoPhrases = [
+    'O câncer de próstata tem até 90% de chances de cura se diagnosticado precocemente.',
+    '10% dos homens com mais de 50 anos têm câncer de próstata.',
+    'Aos 75 anos, a probabilidade de ter câncer de próstata pode chegar a 50%.',
+    '1 a cada 36 homens morrem de câncer de próstata',
+    'Em 2014, 69.000 homens serão diagnosticados com câncer de próstata'
+  ];
+
+  self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
+
+  console.log(self.infoText);
+
   self.shareName = '';
   self.toShareEmail = '';
 
