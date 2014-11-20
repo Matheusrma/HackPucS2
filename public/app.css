@@ -9,8 +9,8 @@ p {
   color: white;
 }
 
-@media screen {
+@media Handheld {
     #whatsappshare {
-        display: none;
+        display: block;
     }
 }
