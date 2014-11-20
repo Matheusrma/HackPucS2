@@ -11,15 +11,16 @@ angular.module('hackpuc').controller('MainCtrl', function () {
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-  ZeroClipboard.config( { swfPath: "./lib/ZeroClipboard.swf" } );
-  
-  var client = new ZeroClipboard('my-button_text');
+  var client = new ZeroClipboard($('#my-button_text'), { 
+    moviePath: "./lib/ZeroClipboard.swf" 
+  });
+
   client.on( 'load', function(client) {
 
     console.log('dvdsvsavasv');
 
     client.on( 'datarequested', function(client) {
-      var text = $('#copy_this_text').text();
+      var text = $('#shareName').text();
       client.setText(text);
     });
 
@@ -34,7 +35,7 @@ angular.module('hackpuc').controller('MainCtrl', function () {
     console.log('error');
     ZeroClipboard.destroy();
   } );
-  
+
   this.senderName = getParameterByName('name');
 
   this.shareName = '';
