@@ -11,31 +11,6 @@ angular.module('hackpuc').controller('MainCtrl', function () {
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-  var client = new ZeroClipboard($('#my-button_text'), { 
-    moviePath: "./lib/ZeroClipboard.swf" 
-  });
-
-  client.on( 'load', function(client) {
-
-    console.log('dvdsvsavasv');
-
-    client.on( 'datarequested', function(client) {
-      var text = $('#shareName').text();
-      client.setText(text);
-    });
-
-    // callback triggered on successful copying
-    client.on( 'complete', function(client, args) {
-      console.log("Text copied to clipboard: \n" + args.text );
-    });
-  });
-
-  // In case of error - such as Flash not being available
-  client.on( 'wrongflash noflash', function() {
-    console.log('error');
-    ZeroClipboard.destroy();
-  } );
-
   this.senderName = getParameterByName('name');
 
   this.shareName = '';
@@ -45,12 +20,10 @@ angular.module('hackpuc').controller('MainCtrl', function () {
     self.isShared = true;
     this.shareLink = 'file:///Users/matheusrma/Documents/projects/web/HackPucS2/index.html?name=' 
                       + this.shareName;
-
-    client.setText(this.shareLink);
   }
 
-  this.getShareLink = function(){
-    return this.shareLink;
+  this.isNameFalsy = function(){
+    return this.shareName == false;
   }
 });
 

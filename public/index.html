@@ -21,9 +21,7 @@
       <label for="shareName">Nome:</label>
       <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
 
-      <button id="my-button_text">Copy to Clipboard</button>
-
-      <button ng-click="main.share()">Espalhar o amor</button>
+      <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
     <div class="col-sm-8" ng-show="main.isShared">  
