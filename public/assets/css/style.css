@@ -43,6 +43,12 @@ body {
   padding-left: 98px;
 }
 
+#happy-finger {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #little-joke, #serious-stats {
   color: #fff;
   margin-top: 15px;
