@@ -1,27 +1,67 @@
 <html ng-app="hackpuc">
-
   <head>
-    <meta charset="UTF-8"> 
-    <meta property="og:title" content="Receba meu amor 👉💙"/>
-    <meta property="og:url" content="http://www.espalheamorazul.com.br/" />
-    <meta property="og:site_name" content="Espalhe Amor Azul"/>
-    <meta property="og:description" content="Venha experimentar esse movimento de amor!"/>
-    <meta property="og:image" content="http://2.bp.blogspot.com/-PF8bRiGNOuY/TWAkNlUhRTI/AAAAAAAAAMg/qsGy9CZ2joc/s1600/fond-Blue-Heart-love.jpeg"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Espalhe amor azul! s2</title>
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="app.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <script 
-      type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
-    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-    <script type="text/javascript" src="lib/jquery.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-        
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <!--<script type="text/javascript" src="lib/jquery.min.js"></script>-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <!-- Facebook -->
+    <meta property="og:title" content="HackPuc"/>
+    <meta property="og:url" content="https://hackpucs2.herokuapp.com"/>
+    <meta property="og:site_name" content="HackPuc"/>
+    <meta property="og:description" content="Testando a description"/>
+    <meta property="og:image" content="http://2.bp.blogspot.com/-PF8bRiGNOuY/TWAkNlUhRTI/AAAAAAAAAMg/qsGy9CZ2joc/s1600/fond-Blue-Heart-love.jpeg"/>
   </head>
 
   <body ng-controller="MainCtrl as main">
+
+    <div id="topBar">
+      <h1 class="badscript-font">Novembro <span>Azul</span></h1>
+    </div>
+
+    <p>{{main.getSenderName()}} te enviou um amorzinho...</p>
+
+    <div ng-hide="main.isShared">
+      <label for="shareName">Nome:</label>
+      <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
+
+      <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
+    </div>
+
+    <p>{{main.infoText}}</p>
+
+    <div class="col-sm-8" ng-show="main.isShared">
+      <p>Compartilhe o amor:</p>  
+      <p>{{main.shareLink}}</p>
+
+      <div class="fb-share-button" data-href="https://hackpucs2.herokuapp.com" data-layout="box_count"></div>
+      <input class="form-control" ng-model="main.toShareEmail" type="text">
+      <a id="whats-app-share" href="whatsapp://send?text=https://hackpucs2.herokuapp.com" data-action="share/whatsapp/share" style="display:none">Share via Whatsapp</a>
+      <span ng-show='main.isEmailInvalid'>Email Invalido</span>
+      <button ng-click="main.sendMail()">Email</button>
+    </div>
+
+    <!-- Facebook JS -->
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -40,6 +80,7 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <!-- Google Analytics JS -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,36 +89,7 @@
 
       ga('create', 'UA-43823080-7', 'auto');
       ga('send', 'pageview');
-
     </script>
 
-    <p>{{main.getSenderName()}} te enviou um amorzinho...</p>
-
-    <div ng-hide="main.isShared" class="col-sm-8">
-      <label for="shareName">Nome:</label>
-      <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
-
-      <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
-    </div>
-
-    <p>{{main.infoText}}</p>
-
-    <div class="col-sm-8" ng-show="main.isShared">
-      <p>Compartilhe o amor:</p>  
-      <p>{{main.shareLink}}</p>
-
-      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br/" data-layout="box_count"></div>
-      <input class="form-control" ng-model="main.toShareEmail" type="text">
-      <a id="whats-app-share" 
-         href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
-         data-action="share/whatsapp/share" 
-         style="display:none" >
-        Share via Whatsapp
-      </a>
-      <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-      <button ng-click="main.sendMail()">Email</button>
-    </div>
-
   </body>
-
 </html>
