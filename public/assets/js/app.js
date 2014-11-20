@@ -51,7 +51,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     $http.post('/api/sendMail',
       {
         to : self.toShareEmail,
-        name: self.shareName
+        name: 'Um Amigo'
       }).
       success(function(data, status, headers, config) {
         console.log('UHUL');

@@ -62,16 +62,15 @@
 
                 <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"> </div>
 
-                <input class="form-control" ng-model="main.toShareEmail" type="text">
+                
                 <a id="whats-app-share" 
                   href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
                   data-action="share/whatsapp/share" 
                   style="display:none" >
                   Share via Whatsapp
                 </a>
-
-                <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-                <button onClick="ga('send', 'event', 'Share', 'Email');" ng-click="main.sendMail()">Email</button>
+                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Email</button>
               </div>
             </div><!-- /#spread -->
 
@@ -95,7 +94,19 @@
               <div>
             </div>
           </div><!-- /#info-row -->
+        </div>
+      </div>
+    </div>
 
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <label for='email-input'>Email:</label>
+          <input id='email-input' class="form-control" ng-model="main.toShareEmail" type="text">
+          <span ng-show='main.isEmailInvalid'>Email Invalido</span>
+          <button type="button" class="btn btn-primary" 
+                  onClick="ga('send', 'event', 'Share', 'Email');" 
+                  ng-click="main.sendMail()">Send Email</button>
         </div>
       </div>
     </div>
