@@ -18,6 +18,6 @@ app.get('*', function(req, res){
   res.render('index');
 });
  
-var server = app.listen(3000, function() {
-  console.log('Listening on port %d', server.address().port);
+http.createServer(app).listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'));
 });
