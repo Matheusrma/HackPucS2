@@ -94,7 +94,7 @@ body {
 #blue-november img,
 #donate img {
   display: block;
-  margin-left: 30px;
+  margin: auto;
 }
 
 #social-networks {
@@ -138,6 +138,16 @@ body {
 /* MOBILE */
 
 @media (min-width: 992px) { 
+  #info h2 {
+    font-size: 30px;
+  }
+
+  #info .row {
+    background: none;
+  }  
+}
+
+@media (min-width: 1200px) { 
   .info-bg {
     width: 400px;
     height: 235px;
@@ -145,5 +155,20 @@ body {
     background-repeat: no-repeat;
     background-color: #fff;
     margin-top: 30px;
+  }
+
+  #info h2 {
+    font-size: 32px;
+  }
+
+  #info .row {
+    background-image: url("../img/info-div.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 235px;
+  }  
+
+  #blue-november img {
+    margin-left: 35px;
   }
 }
