@@ -6,7 +6,7 @@
     <meta property="og:url" content="https://hackpucs2.herokuapp.com"/>
     <meta property="og:site_name" content="HackPuc"/>
     <meta property="og:description" content="Testando a description"/>
-    
+    <meta property="og:image" content="http://2.bp.blogspot.com/-PF8bRiGNOuY/TWAkNlUhRTI/AAAAAAAAAMg/qsGy9CZ2joc/s1600/fond-Blue-Heart-love.jpeg"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
@@ -49,7 +49,8 @@
       <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
-    <div class="col-sm-8" ng-show="main.isShared">  
+    <div class="col-sm-8" ng-show="main.isShared">
+      <p>Compartilhe o amor:</p>  
       <p>{{main.shareLink}}</p>
 
       <div class="fb-share-button" data-href="https://hackpucs2.herokuapp.com" data-layout="box_count"></div>
