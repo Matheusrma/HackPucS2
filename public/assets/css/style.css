@@ -1,10 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Bad+Script);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
 
 .badscript-font {
   font-family: 'Bad Script', cursive;
 }
 
 body {
+  font-family: 'PT Sans', sans-serif;
+
   background: #2ebcfd; /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover,  #2ebcfd 0%, #0498dd 100%); /* FF3.6+ */
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#2ebcfd), color-stop(100%,#0498dd)); /* Chrome,Safari4+ */
@@ -38,4 +41,23 @@ body {
 
 #topBar h1 span {
   padding-left: 98px;
+}
+
+#little-joke, #serious-stats {
+  color: #fff;
+  margin-top: 15px;
+  font-size: 72px;
+}
+
+#serious-stats {
+  color: #fff;
+  font-size: 21px;
+}
+
+.info-bg {
+  width: 400px;
+  height: 235px;
+  background-image: url("../img/info-bg.gif");
+  background-repeat: no-repeat;
+  background-color: #fff;
 }

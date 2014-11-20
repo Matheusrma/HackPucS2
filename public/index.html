@@ -39,7 +39,25 @@
       <h1 class="badscript-font">Novembro <span>Azul</span></h1>
     </div>
 
-    <p>{{main.getSenderName()}} te enviou um amorzinho...</p>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <p id="little-joke" class="badscript-font text-center">"Sentiu meu toque de amor?"</p>
+        <p id="serious-stats" class="text-center">{{main.infoText}}</p>
+
+        <div id="info-row" class="row">
+          <div class="col-md-6">
+            <div class="info-bg">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-bg">
+            <div>
+          </div>
+        </div><!-- /#info-row -->
+
+      </div>
+    </div>
+    <!--<p id="little-joke">{{main.getSenderName()}} te enviou um amorzinho...</p>-->
 
     <div ng-hide="main.isShared">
       <label for="shareName">Nome:</label>
