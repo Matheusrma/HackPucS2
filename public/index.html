@@ -13,14 +13,13 @@
     <![endif]-->
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     
-
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.js"></script>
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -81,7 +80,7 @@
                      onClick="ga('send', 'event', 'Share', 'EmailOpen');">Email</a>
 
                   <a id="whats-app-share" 
-                    href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
+                    href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br" 
                     data-action="share/whatsapp/share"
                     onClick="ga('send', 'event', 'Share', 'Whatsapp');"
                     style="display: none;">
@@ -113,7 +112,6 @@
               </div><!-- /#info-row -->
 
             </div>
-
           </div>
         </div>
       </div>
@@ -127,7 +125,9 @@
           </div>
 
           <div class="modal-body">
-            <tags-input id='email-input' ng-model="main.emailList" class="input" placeholder="Email de seus amigos...">
+            <tags-input id='email-input' ng-model="main.emailList" 
+                        class="input" placeholder="Email de seus amigos..."
+                        add-on-enter="true" add-on-comma="true">
             </tags-input>
             <span ng-show='main.isEmailInvalid' style="color:red">Email Invalido</span>
           </div>

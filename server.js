@@ -26,7 +26,7 @@ app.post('/api/sendMail', function(req, res){
   var sg_password = "hackpucs27";
 
   var sendgrid = require("sendgrid")(sg_username, sg_password);
-  var link = "http://www.espalheamorazul.com.br/?name=" + emailInfo.name;
+  var link = "http://www.espalheamorazul.com.br";
 
   sendgrid.send({
     to:       emailInfo.to,
