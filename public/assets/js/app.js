@@ -18,7 +18,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
         $('#whats-app-share').show();
     }
 
-    startTimeline($('#little-joke'));
+    startTimeline($('#happy-finger'));
   }
 
   var senderName = getParameterByName('name');
@@ -101,10 +101,12 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   }
 
   function startTimeline(element) {
-    console.log(element);
-    TweenLite.to(element, 2, {rotation:30, scaleX:0.8, onComplete:function(){
-      TweenLite.to(element, 2, {rotation:50, scaleX:1.2, onComplete:function(){
-        console.log('END');
+    
+    TweenLite.to(element, 2, {top:700, onComplete:function(){
+      TweenLite.to(element, 0.5, {top:730, onComplete:function(){
+        TweenLite.to(element, 1.2, {top:200, onComplete:function(){
+          console.log('END');
+        }});
       }});
     }});
   }

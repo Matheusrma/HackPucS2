@@ -60,12 +60,16 @@
               <div class="row">
                 <div id="blue-november" class="col-md-6">
                   <h2 class="badscript-font text-center">Saiba mais:</h2>
-                  <a href="http://www.novembroazul.com.br"><img src="assets/img/novembro-azul.jpg"></a>
+                  <a onClick="ga('send', 'event', 'Action', 'Campaing');" target="_blank" href="http://www.novembroazul.com.br">
+                    <img src="assets/img/novembro-azul.jpg">
+                  </a>
                 </div>
                 <span></span>
                 <div id="donate" class="col-md-6">
                   <h2 class="badscript-font text-center">Doe agora!</h2>
-                  <a href="http://www.cancer.org.br/doe"><img src="assets/img/fundacao-cancer.gif"></a>
+                  <a onClick="ga('send', 'event', 'Action', 'Donate');" target="_blank" href="http://www.cancer.org.br/doe">
+                    <img src="assets/img/fundacao-cancer.gif">
+                  </a>
                 </div>
               </div>
             <div>
@@ -84,8 +88,6 @@
       <button onClick="ga('send', 'event', 'Share', 'Activate');" ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
-    <p>{{main.infoText}}</p>
-    
     <a class="twitter-share-button" href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul" >
       Tweet
     </a>
