@@ -49,8 +49,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
 
   self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
 
-  console.log(self.infoText);
-
   self.shareName = '';
   self.toShareEmail = '';
 
