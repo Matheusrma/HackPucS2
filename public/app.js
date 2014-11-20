@@ -18,8 +18,7 @@ angular.module('hackpuc').controller('MainCtrl', function () {
 
   this.share = function(){
     self.isShared = true;
-    this.shareLink = 'file:///Users/matheusrma/Documents/projects/web/HackPucS2/index.html?name=' 
-                      + this.shareName;
+    this.shareLink = location.origin + this.shareName;
   }
 
   this.isNameFalsy = function(){
