@@ -1,5 +1,5 @@
 
-angular.module('hackpuc', []);
+angular.module('hackpuc', ['ngTagsInput']);
 
 angular.module('hackpuc').controller('MainCtrl', function ($http) {
   var self = this;
@@ -9,8 +9,9 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
 
     self.toShareEmail = '';
-
     self.isEmailInvalid = false;
+    
+    self.emailList = [];
 
     if (getMobileOperatingSystem() != 'unknown') {
         $('#whats-app-share').show();

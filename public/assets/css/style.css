@@ -100,3 +100,16 @@ body {
   display: block;
   margin-left: 30px;
 }
+
+#email-input{
+  height: 120px;
+}
+
+#email-button{
+  margin-top:12px
+}
+
+#powered-by{
+  float:left; 
+  margin-top:25px
+}

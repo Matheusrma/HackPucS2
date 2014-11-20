@@ -16,6 +16,11 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.js"></script>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -62,7 +67,6 @@
 
                 <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"> </div>
 
-                
                 <a id="whats-app-share" 
                   href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
                   data-action="share/whatsapp/share" 
@@ -107,16 +111,17 @@
           </div>
 
           <div class="modal-body">
-            <input id='email-input' class="form-control" ng-model="main.toShareEmail" type="text" placeholder="Email do seu amigos...">
+            <tags-input id='email-input' ng-model="main.tags" class="input" placeholder="Email de seus amigos...">
+            </tags-input>
             <span ng-show='main.isEmailInvalid' style="color:red">Email Invalido</span>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" 
+            <button id="email-button" type="button" class="btn btn-primary" 
                   onClick="ga('send', 'event', 'Share', 'Email');" 
                   ng-click="main.sendMail()">Send Email</button>
-            <div>      
-              Powered by <span><a href="https://sendgrid.com/">SendGrid</a></span>
+            <div id="powered-by">      
+              Powered by <span><a target="_blank" href="https://sendgrid.com/"><img src="assets/img/sendgrid_logo.png"></a></span>
             </div>
           </div>
         </div>
