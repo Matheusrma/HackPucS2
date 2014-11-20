@@ -1,6 +1,11 @@
 <html ng-app="hackpuc">
 
   <head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="HackPuc"/>
+    <meta property="og:url" content="https://hackpucs2.herokuapp.com"/>
+    <meta property="og:site_name" content="HackPuc"/>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
 
@@ -14,6 +19,25 @@
   </head>
 
   <body ng-controller="MainCtrl as main">
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '593752470770914',
+          xfbml      : true,
+          version    : 'v2.2'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
     <p>{{main.senderName}} te enviou um amorzinho...</p>
 
     <div ng-hide="main.isShared" class="col-sm-8">
@@ -25,6 +49,12 @@
 
     <div class="col-sm-8" ng-show="main.isShared">  
       <p>{{main.shareLink}}</p>
+
+      <div class="fb-send" data-href="main.shareLink"
+           data-width="200" 
+           data-height="200" data-colorscheme="dark"></div>
+
+      <div class="fb-share-button" data-href="main.shareLink" data-layout="box_count"></div>
     </div>
 
   </body>
