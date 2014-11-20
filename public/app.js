@@ -11,10 +11,18 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
+  function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  } 
+
   var senderName = getParameterByName('name');
 
-  this.shareName = '';
-  this.isShared = false;
+  self.shareName = '';
+  self.toShareEmail = '';
+
+  self.isShared = false;
+  self.isEmailInvalid = false;
 
   this.getSenderName = function(){
     return senderName || 'Um Amigo';
@@ -32,10 +40,17 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   }
 
   this.sendMail = function(){
+    if (!validateEmail(self.toShareEmail)){
+      self.isEmailInvalid = true;
+      return;
+    }
+
+    self.isEmailInvalid = false;
+
     $http.post('/api/sendMail',
       {
-        to : "luiza.vivas@gmail.com",
-        name: "Matheus Motta"
+        to : self.toShareEmail,
+        name: self.shareName
       }).
       success(function(data, status, headers, config) {
         console.log('UHUL');

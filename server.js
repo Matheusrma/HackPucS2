@@ -29,7 +29,7 @@ app.post('/api/sendMail', function(req, res){
 
   sendgrid.send({
     to:       emailInfo.to,
-    from:     'matheusmotta.mm@gmail.com',
+    from:     'espalheamorazul@gmail.com',
     subject:  emailInfo.name + ' te mandou amor!',
     text:     'Começou a espalhaçao de amorzinho s2 s2.'
   }, function(err, json) {
