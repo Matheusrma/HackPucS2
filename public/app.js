@@ -29,7 +29,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   Environment.isAndroid = (navigator.userAgent.indexOf('android') > -1);
 
   var bodyClass;
-  if (!(Environment.isiOS || Environment.isAndroid)
+  if (!(Environment.isiOS || Environment.isAndroid))
   {
       $('#whats-app-share').show();
   }
