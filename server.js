@@ -32,7 +32,7 @@ app.post('/api/sendMail', function(req, res){
     to:       emailInfo.to,
     from:     'espalheamorazul@gmail.com',
     subject:  emailInfo.name + ' te mandou amor!',
-    html:     '<div><p>'+ emailInfo.name + 'te mandou uma mensagem de amor e carinho</p><a href=' + link + '> Receba meu amor 👉💙</a> </div>'
+    html:     '<div><p>'+ emailInfo.name + 'te mandou uma mensagem de amor!</p><a href=' + link + '>Venha experimentar esse movimento</a></div>'
   }, function(err, json) {
     if (err) { return console.error(err); }
     console.log(json);
