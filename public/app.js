@@ -16,14 +16,24 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     return re.test(email);
   } 
 
-  var Environment = {};
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  Environment.isiOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false);
-  Environment.isAndroid = (navigator.userAgent.indexOf('android') > -1);
+    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+    {
+      return 'iOS';
+    }
+    else if( userAgent.match( /Android/i ) )
+    {
+      return 'Android';
+    }
+    else
+    {
+      return 'unknown';
+    }
+  }
 
-  var bodyClass;
-  if (Environment.isiOS || Environment.isAndroid)
-  {
+  if (getMobileOperatingSystem() != 'unknown') {
       $('#whats-app-share').show();
   }
 
