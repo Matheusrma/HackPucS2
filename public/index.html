@@ -63,14 +63,13 @@
       <label for="shareName">Nome:</label>
       <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
 
-      <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
+      <button onClick="ga('send', 'event', 'Share', 'Base');" ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
     <p>{{main.infoText}}</p>
     
     <a class="twitter-share-button"
       href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul"
-      onClick="ga('send', 'event', 'Share', 'Twitter');"
       >
       Tweet
     </a>
@@ -80,14 +79,12 @@
       <p>{{main.shareLink}}</p>
 
       <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"
-      onClick="ga('send', 'event', 'Share', 'Facebook');">
       </div>
 
       <input class="form-control" ng-model="main.toShareEmail" type="text">
       <a id="whats-app-share" 
          href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
          data-action="share/whatsapp/share" 
-         onClick="ga('send', 'event', 'Share', 'Whatsapp');"
          style="display:none" >
         Share via Whatsapp
       </a>
