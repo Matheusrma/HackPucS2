@@ -126,7 +126,9 @@
           </div>
 
           <div class="modal-body">
-            <tags-input id='email-input' ng-model="main.emailList" class="input" placeholder="Email de seus amigos...">
+            <tags-input id='email-input' ng-model="main.emailList" 
+                        class="input" placeholder="Email de seus amigos..."
+                        add-on-enter="true" add-on-comma="true">
             </tags-input>
             <span ng-show='main.isEmailInvalid' style="color:red">Email Invalido</span>
           </div>
