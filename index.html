@@ -1,12 +1,30 @@
-<html>
+<html ng-app="hackpuc">
 
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
+
+    <script 
+      type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+    </script>
+
+    <script type="text/javascript" src="app.js"></script>
+        
   </head>
 
-  <body>
-    <p>TESTE</p>
+  <body ng-controller="MainCtrl as main">
+    <p>{{main.senderName}} te enviou um amorzinho...</p>
+
+    <div class="col-sm-8">
+      <label for="shareName">Nome:</label>
+      <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
+      <button ng-hide="main.isShared" ng-click="main.share()">Espalhar o amor</button>
+    </div>
+
+    <div class="col-sm-8" ng-show="main.isShared">  
+      <p>{{main.shareLink}}</p>
+    </div>
+
   </body>
 
 </html>
