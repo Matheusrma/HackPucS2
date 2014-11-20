@@ -9,7 +9,7 @@ p {
   color: white;
 }
 
-@media Handheld {
+@media handheld {
     #whatsappshare {
         display: block;
     }
