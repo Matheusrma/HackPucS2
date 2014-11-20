@@ -43,6 +43,8 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   }
 
   this.sendMail = function(){
+    console.log(self.emailList);
+
     if (!validateEmail(self.toShareEmail)){
       self.isEmailInvalid = true;
       return;
@@ -82,18 +84,15 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   function getMobileOperatingSystem() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-    {
+    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
       return 'iOS';
     }
-    else if( userAgent.match( /Android/i ) )
-    {
+    
+    if( userAgent.match( /Android/i ) ) {
       return 'Android';
     }
-    else
-    {
-      return 'unknown';
-    }
+    
+    return 'unknown';
   }
 
   function startTimeline(element) {
