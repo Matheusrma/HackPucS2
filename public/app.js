@@ -40,7 +40,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
   }
 
   this.getWhatsappLink = function(){
-    return 'whatsapp://send?text='+self.shareLink;
+    return ;
   }
 
   this.sendMail = function(){
