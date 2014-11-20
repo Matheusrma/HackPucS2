@@ -49,12 +49,18 @@
     </div>
 
     <p>{{main.infoText}}</p>
+    
+    <a class="twitter-share-button"
+      href="https://twitter.com/share?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/&hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul"
+      >
+      Tweet
+    </a>
 
     <div class="col-sm-8" ng-show="main.isShared">
       <p>Compartilhe o amor:</p>  
       <p>{{main.shareLink}}</p>
 
-      <div class="fb-share-button" data-href="https://hackpucs2.herokuapp.com" data-layout="box_count"></div>
+      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"></div>
       <input class="form-control" ng-model="main.toShareEmail" type="text">
       <a id="whats-app-share" 
          href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
@@ -94,6 +100,10 @@
 
       ga('create', 'UA-43823080-7', 'auto');
       ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+      window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
     </script>
 
   </body>
