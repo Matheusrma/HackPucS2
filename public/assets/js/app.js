@@ -102,9 +102,13 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
 
   function startTimeline(element) {
     
-    TweenLite.to(element, 2, {top:700, onComplete:function(){
-      TweenLite.to(element, 0.5, {top:730, onComplete:function(){
-        TweenLite.to(element, 1.2, {top:200, onComplete:function(){
+    var screenHeight = window.innerHeight;
+
+    element.css('top', screenHeight);
+
+    TweenLite.to(element, 1.5, {top:screenHeight * 0.88, onComplete:function(){
+      TweenLite.to(element, 0.3, {top:screenHeight * 0.9, onComplete:function(){
+        TweenLite.to(element, 1.2, {top:screenHeight * 0.25, onComplete:function(){
           console.log('END');
         }});
       }});
