@@ -52,6 +52,7 @@
     
     <a class="twitter-share-button"
       href="https://twitter.com/share?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/&hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul"
+      onClick="_gaq.push(['_trackEvent', 'Share', 'Twitter']);"
       >
       Tweet
     </a>
@@ -60,16 +61,18 @@
       <p>Compartilhe o amor:</p>  
       <p>{{main.shareLink}}</p>
 
-      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"></div>
+      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count"
+      onClick="_gaq.push(['_trackEvent', 'Share', 'Facebook']);"></div>
       <input class="form-control" ng-model="main.toShareEmail" type="text">
       <a id="whats-app-share" 
          href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
          data-action="share/whatsapp/share" 
+         onClick="_gaq.push(['_trackEvent', 'Share', 'WhatsApp']);"
          style="display:none" >
         Share via Whatsapp
       </a>
       <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-      <button ng-click="main.sendMail()">Email</button>
+      <button onClick="_gaq.push(['_trackEvent', 'Share', 'Email']);" ng-click="main.sendMail()">Email</button>
     </div>
 
     <!-- Facebook JS -->
