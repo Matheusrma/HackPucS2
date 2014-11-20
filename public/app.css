@@ -8,15 +8,3 @@ p {
   font-size: 30px;
   color: white;
 }
-
-@media handheld {
-    #whatsappshare {
-        display: block;
-    }
-
-    p {
-      font-size: 30px;
-      color: yellow;
-    }
-
-}
