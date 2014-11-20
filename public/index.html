@@ -23,6 +23,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/lib/bootstrap.min.js"></script>
 
+    <!-- GreenSock tween lib -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
     <script type="text/javascript" src="assets/js/app.js"></script>
 
     <!-- Facebook -->
@@ -69,22 +72,29 @@
 
       </div>
     </div>
+
     <!--<p id="little-joke">{{main.getSenderName()}} te enviou um amorzinho...</p>-->
 
-    <!--<div ng-hide="main.isShared">
+    <div ng-hide="main.isShared">
       <label for="shareName">Nome:</label>
       <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
 
-      <button ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
+      <button onClick="ga('send', 'event', 'Share', 'Activate');" ng-disabled="main.isNameFalsy()" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
     <p>{{main.infoText}}</p>
+    
+    <a class="twitter-share-button" href="https://twitter.com/share?text=Receba meu amor 👉💙 - &hashtags=EspalheAmorAzul,dribleopreconceito,novembroazul" >
+      Tweet
+    </a>
 
     <div class="col-sm-8" ng-show="main.isShared">
       <p>Compartilhe o amor:</p>  
       <p>{{main.shareLink}}</p>
 
-      <div class="fb-share-button" data-href="https://hackpucs2.herokuapp.com" data-layout="box_count"></div>
+      <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count">
+      </div>
+
       <input class="form-control" ng-model="main.toShareEmail" type="text">
       <a id="whats-app-share" 
          href="whatsapp://send?text=Receba meu amor 👉💙 - http://www.espalheamorazul.com.br/" 
@@ -93,8 +103,8 @@
         Share via Whatsapp
       </a>
       <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-      <button ng-click="main.sendMail()">Email</button>
-    </div>-->
+      <button onClick="ga('send', 'event', 'Share', 'Email');" ng-click="main.sendMail()">Email</button>
+    </div>
 
     <!-- Facebook JS -->
     <script>
@@ -124,6 +134,11 @@
 
       ga('create', 'UA-43823080-7', 'auto');
       ga('send', 'pageview');
+    </script>
+
+    <!-- Twitter JS -->
+    <script type="text/javascript">
+      window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
     </script>
 
   </body>

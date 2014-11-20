@@ -4,37 +4,21 @@ angular.module('hackpuc', []);
 angular.module('hackpuc').controller('MainCtrl', function ($http) {
   var self = this;
 
-  function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-  }
+  var init = function(){
 
-  function validateEmail(email) { 
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  } 
+    self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
 
-  function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    self.shareName = '';
+    self.toShareEmail = '';
 
-    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-    {
-      return 'iOS';
+    self.isShared = false;
+    self.isEmailInvalid = false;
+
+    if (getMobileOperatingSystem() != 'unknown') {
+        $('#whats-app-share').show();
     }
-    else if( userAgent.match( /Android/i ) )
-    {
-      return 'Android';
-    }
-    else
-    {
-      return 'unknown';
-    }
-  }
 
-  if (getMobileOperatingSystem() != 'unknown') {
-      $('#whats-app-share').show();
+    startTimeline($('#little-joke'));
   }
 
   var senderName = getParameterByName('name');
@@ -47,13 +31,7 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     'Em 2014, 69.000 homens serão diagnosticados com câncer de próstata'
   ];
 
-  self.infoText = infoPhrases[Math.floor(Math.random() * infoPhrases.length)];
-
-  self.shareName = '';
-  self.toShareEmail = '';
-
-  self.isShared = false;
-  self.isEmailInvalid = false;
+  //PUBLIC INTERFACE
 
   this.getSenderName = function(){
     return senderName || 'Um Amigo';
@@ -90,5 +68,48 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
         console.log('SHIT');
       });
   }
+
+  //PRIVATE FUNCTIONS
+
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  } 
+
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+    {
+      return 'iOS';
+    }
+    else if( userAgent.match( /Android/i ) )
+    {
+      return 'Android';
+    }
+    else
+    {
+      return 'unknown';
+    }
+  }
+
+  function startTimeline(element) {
+    console.log(element);
+    TweenLite.to(element, 2, {rotation:30, scaleX:0.8, onComplete:function(){
+      TweenLite.to(element, 2, {rotation:50, scaleX:1.2, onComplete:function(){
+        console.log('END');
+      }});
+    }});
+  }
+
+
+  init();
 });
 
