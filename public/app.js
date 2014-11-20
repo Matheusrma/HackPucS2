@@ -1,7 +1,7 @@
 
 angular.module('hackpuc', []);
 
-angular.module('hackpuc', []).controller('MainCtrl', function () {
+angular.module('hackpuc').controller('MainCtrl', function () {
   var self = this;
 
   function getParameterByName(name) {
@@ -10,6 +10,10 @@ angular.module('hackpuc', []).controller('MainCtrl', function () {
           results = regex.exec(location.search);
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
+
+  ZeroClipboard.config( { swfPath: "lib/ZeroClipboard.swf" } );
+  
+  var client = new ZeroClipboard('my-button_text');
 
   this.senderName = getParameterByName('name');
 
@@ -20,6 +24,12 @@ angular.module('hackpuc', []).controller('MainCtrl', function () {
     self.isShared = true;
     this.shareLink = 'file:///Users/matheusrma/Documents/projects/web/HackPucS2/index.html?name=' 
                       + this.shareName;
+
+    client.setText(this.shareLink);
+  }
+
+  this.getShareLink = function(){
+    return this.shareLink;
   }
 });
 

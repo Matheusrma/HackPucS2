@@ -8,6 +8,8 @@
       type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
     </script>
 
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/ZeroClipboard.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
         
   </head>
@@ -15,10 +17,14 @@
   <body ng-controller="MainCtrl as main">
     <p>{{main.senderName}} te enviou um amorzinho...</p>
 
-    <div class="col-sm-8">
+    <div ng-hide="main.isShared" class="col-sm-8">
       <label for="shareName">Nome:</label>
       <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
-      <button ng-hide="main.isShared" ng-click="main.share()">Espalhar o amor</button>
+
+      <button id="my-button_text" data-clipboard-target="clipboard_text">Copy to Clipboard</button>
+      <input type="text" id="clipboard_text" value="Clipboard Text"/>
+
+      <button data-clipboard-text="Copy me!" ng-click="main.share()">Espalhar o amor</button>
     </div>
 
     <div class="col-sm-8" ng-show="main.isShared">  
