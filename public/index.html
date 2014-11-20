@@ -46,11 +46,23 @@
 
         <div id="info-row" class="row">
           <div class="col-md-6">
-            <div class="info-bg">
+            <div id="spread" class="info-bg">
+              <h2 class="badscript-font text-center">#espalheamorazul</h2>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="info-bg">
+            <div id="info" class="info-bg">
+              <div class="row">
+                <div id="blue-november" class="col-md-6">
+                  <h2 class="badscript-font text-center">Saiba mais:</h2>
+                  <a href="http://www.novembroazul.com.br"><img src="assets/img/novembro-azul.jpg"></a>
+                </div>
+                <span></span>
+                <div id="donate" class="col-md-6">
+                  <h2 class="badscript-font text-center">Doe agora!</h2>
+                  <a href="http://www.cancer.org.br/doe"><img src="assets/img/fundacao-cancer.gif"></a>
+                </div>
+              </div>
             <div>
           </div>
         </div><!-- /#info-row -->
@@ -59,7 +71,7 @@
     </div>
     <!--<p id="little-joke">{{main.getSenderName()}} te enviou um amorzinho...</p>-->
 
-    <div ng-hide="main.isShared">
+    <!--<div ng-hide="main.isShared">
       <label for="shareName">Nome:</label>
       <input id="shareName" class="form-control" ng-model="main.shareName" type="text">
 
@@ -82,7 +94,7 @@
       </a>
       <span ng-show='main.isEmailInvalid'>Email Invalido</span>
       <button ng-click="main.sendMail()">Email</button>
-    </div>
+    </div>-->
 
     <!-- Facebook JS -->
     <script>
