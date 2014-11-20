@@ -1,7 +1,7 @@
 
 angular.module('hackpuc', []);
 
-angular.module('hackpuc').controller('MainCtrl', function () {
+angular.module('hackpuc').controller('MainCtrl', function ($http) {
   var self = this;
 
   function getParameterByName(name) {
@@ -29,6 +29,20 @@ angular.module('hackpuc').controller('MainCtrl', function () {
 
   this.isNameFalsy = function(){
     return this.shareName == false;
+  }
+
+  this.sendMail = function(){
+    $http.post('/api/sendMail',
+      {
+        to : "luiza.vivas@gmail.com",
+        name: "Matheus Motta"
+      }).
+      success(function(data, status, headers, config) {
+        console.log('UHUL');
+      }).
+      error(function(data, status, headers, config) {
+        console.log('SHIT');
+      });
   }
 });
 
