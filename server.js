@@ -4,15 +4,18 @@ var path = require('path');
  
 var app = express();
  
-app.get(/^(.*)$/, function(req, res){
-  var path = '.' + req.params[0];
-  fs.stat(path, function(err, stat) {
-    if (err || !stat.isFile()) {
-      path = './index.html';
-    }
-    console.log('Serving', path);
-    res.sendfile(path);
-  });
+app.set('port', process.env.PORT || 3000);
+
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(app.router);
+
+app.set('view engine', 'html');
+
+app.get('*', function(req, res){
+  res.render('index');
 });
  
 var server = app.listen(3000, function() {

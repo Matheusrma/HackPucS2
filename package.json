@@ -3,6 +3,6 @@
   "description": "HackPuc",
   "devDependencies": {},
   "dependencies": {
-    "express": "~3.2.6",
+    "express": "~3.2.6"
   }
 }
