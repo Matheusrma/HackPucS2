@@ -70,7 +70,7 @@
                   Share via Whatsapp
                 </a>
                 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Email</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#email-modal">Email</button>
               </div>
             </div><!-- /#spread -->
 
@@ -98,15 +98,27 @@
       </div>
     </div>
 
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
+    <div id="email-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div class="modal-content">
-          <label for='email-input'>Email:</label>
-          <input id='email-input' class="form-control" ng-model="main.toShareEmail" type="text">
-          <span ng-show='main.isEmailInvalid'>Email Invalido</span>
-          <button type="button" class="btn btn-primary" 
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+            <h4 class="modal-title" id="myModalLabel">Enviar para quem?</h4>
+          </div>
+
+          <div class="modal-body">
+            <input id='email-input' class="form-control" ng-model="main.toShareEmail" type="text" placeholder="Email do seu amigos...">
+            <span ng-show='main.isEmailInvalid' style="color:red">Email Invalido</span>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" 
                   onClick="ga('send', 'event', 'Share', 'Email');" 
                   ng-click="main.sendMail()">Send Email</button>
+            <div>      
+              Powered by <span><a href="https://sendgrid.com/">SendGrid</a></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
