@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Espalhe amor azul! s2</title>
 
     <!-- Bootstrap -->
@@ -50,12 +50,13 @@
       <div class="row">
         <img id="happy-finger" src="assets/img/happy-finger.png">
 
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-9 col-md-offset-3"> 
           <p id="little-joke" class="badscript-font text-center">"Sentiu meu toque de amor?"</p>
           <p id="serious-stats" class="text-center">{{main.infoText}}</p>
 
           <div id="info-row" class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12">
+
               <div id="spread" class="info-bg">
                 <h2 class="badscript-font text-center">#espalheamorazul</h2>
 
@@ -64,7 +65,6 @@
                     <div class="fb-share-button" data-href="http://www.espalheamorazul.com.br" data-layout="box_count">
                     </div>
                   </div>
-
    
                   <div id="twitter-share">
                     <a class="twitter-share-button" 
@@ -88,35 +88,36 @@
                     <img src="assets/img/icon-whatsapp.gif">
                   </a>
                 </div><!-- /#social-networks -->
+              </div><!-- /#spread -->
 
-              </div>
-            </div><!-- /#spread -->
+            </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12">
+
               <div id="info" class="info-bg">
                 <div class="row">
-                  <div id="blue-november" class="col-md-6">
+                  <div id="blue-november" class="col-md-6 col-xs-6">
                     <h2 class="badscript-font text-center">Saiba mais:</h2>
                     <a onClick="ga('send', 'event', 'Action', 'Campaing');" target="_blank" href="http://www.novembroazul.com.br">
                       <img src="assets/img/novembro-azul.jpg">
                     </a>
                   </div>
                   <span></span>
-                  <div id="donate" class="col-md-6">
+                  <div id="donate" class="col-md-6 col-xs-6">
                     <h2 class="badscript-font text-center">Doe agora!</h2>
                     <a onClick="ga('send', 'event', 'Action', 'Donate');" target="_blank" href="http://www.cancer.org.br/doe">
                       <img src="assets/img/fundacao-cancer.gif">
                     </a>
                   </div>
                 </div>
-              <div>
-            </div>
-          </div><!-- /#info-row -->
+              </div><!-- /#info-row -->
 
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
-
     <div id="email-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
