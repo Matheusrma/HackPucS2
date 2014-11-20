@@ -33,11 +33,6 @@ angular.module('hackpuc').controller('MainCtrl', function ($http) {
     }
   }
 
-  $('#email-button').on('click', function() {
-    console.log('acadca');
-    ga('send', 'event', 'Share', 'Email');
-  });
-
   if (getMobileOperatingSystem() != 'unknown') {
       $('#whats-app-share').show();
   }
